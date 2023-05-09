@@ -1,7 +1,9 @@
 package com.example.outreach_portal.service.Implementation;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
@@ -49,8 +51,8 @@ public class ProfileServiceImplementation implements ProfileService {
 		
 		
 	}
-	
-	
+
+
 	@Override
 	public List<User> search(String key)
 	{
@@ -68,16 +70,23 @@ public class ProfileServiceImplementation implements ProfileService {
 		}
 		else
 			return profileDao.retrieveByName(key+'%');
-		
+
 		return users;
-		
+
 	}
 
-	
+
 	@Override
 	public int login(LoginJson loginDetail)
 	{
-		return profileDao.login(loginDetail.getEmail(), loginDetail.getPassword());
+
+		User credential	= profileDao.findByEmailAndPassword(loginDetail.getEmail(), loginDetail.getPassword());
+
+		if (credential != null){
+			return 1;
+		}
+
+		return 0;
 	}
 	@Override
 	public List<Notification> getNotifiaction(int user_id) {

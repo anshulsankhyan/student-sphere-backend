@@ -124,7 +124,7 @@ public class ProfileController {
 
 	}
 
-	@PostMapping(path="/uodateNotification")
+	@PostMapping(path="/updateNotification")
 	public ResponseEntity<?> updatenotification(@RequestBody String user_id)
 	{
 		try

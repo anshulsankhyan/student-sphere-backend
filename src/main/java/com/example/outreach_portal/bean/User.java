@@ -215,5 +215,7 @@ public class User {
 	}
 
 
-
+	public boolean getRole() {
+		return role;
+	}
 }

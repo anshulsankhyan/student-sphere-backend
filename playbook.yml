@@ -1,6 +1,6 @@
 ---
 - name: Docker Pull and Run
-  hosts: 20.193.130.9
+  hosts: all
   remote_user: root
   become: true
   tasks:

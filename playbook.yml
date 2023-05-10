@@ -39,44 +39,43 @@
 
     - name: Docker pull mysql
       docker_image:
-        name: mysql:8.0.23
+        name: mysql:8.0.33
         source: pull
 
     - name: Create Docker Network
       docker_network:
-        name: outreach
+        name: student-sphere
 
     - name: Remove react existing container
       docker_container:
-        name: outreach-react
+        name: spe_major_project_frontend
         state: absent
 
 
     - name: Remove spring existing container
       docker_container:
-        name: outreach-spring
+        name: spe_major_project_backend
         state: absent
 
     - name: Remove react existing image for fresh pull
       docker_image:
-        name: poojan31399/op-frontend:latest
+        name: anshulsankhyan98/spe_major_project_frontend:latest
         state: absent
 
     - name: Remove spring existing image for fresh pull
       docker_image:
-        name: poojan31399/op-backend:latest
+        name: anshulsankhyan98/spe_major_project_backend:latest
         state: absent
 
 
     - name: Docker pull React-app
       docker_image:
-        name: poojan31399/op-frontend:latest
+        name: anshulsankhyan98/spe_major_project_frontend:latest
         source: pull
 
     - name: Docker pull Spring-app
       docker_image:
-        name: poojan31399/op-backend:latest
-        source: pull
+        name: anshulsankhyan98/spe_major_project_backend: pull
 
     - name: Remove mysql existing container
       docker_container:
@@ -89,34 +88,34 @@
         name: outreach-db
         image: mysql:8.0.23
         networks:
-          - name: "outreach"
+          - name: "student-sphere"
         env:
-          MYSQL_ROOT_PASSWORD: poojankhatri
-          MYSQL_DATABASE: outreach_portal
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: Anshul98#
         ports:
-          - "8091:3306"
+          - "3307:3306"
 
     - name: Remove existing log folder
       command: sudo rm -rf log-info
 
     - name: Create outreach-spring container
       docker_container:
-        name: outreach-spring
-        image: poojan31399/op-backend:latest
+        name: backend-spring
+        image: anshulsankhyan98/spe_major_project_backend:latest
         networks:
-          - name: "outreach"
+          - name: "student-sphere"
         env:
-          DATABASE_HOST: outreach_p
+          DATABASE_HOST: root
         ports:
-          - "8081:8081"
+          - "8082:8082"
         volumes:
-          - /home/azureuser/log-info:/logs
+          - /home/Student-Sphere/log-info:/logs
 
     - name: Create outreach-react container
       docker_container:
-        name: outreach-react
-        image: poojan31399/op-frontend:latest
+        name: frontend-react
+        image: anshulsankhyan98/spe_major_project_frontend:latest
         networks:
-          - name: "outreach"
+          - name: "student-sphere"
         ports:
           - "3000:3000"

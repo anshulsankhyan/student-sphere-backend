@@ -1,5 +1,5 @@
 FROM openjdk:8
-EXPOSE 8081
-COPY ./target/outreach-portal.jar ./
+EXPOSE 8082
+COPY ./target/.jar ./
 WORKDIR ./
 ENTRYPOINT ["java", "-jar", "outreach-portal.jar"]

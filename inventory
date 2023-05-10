@@ -1,2 +1,2 @@
 [azureuser]
-azureuser@20.193.130.9 ansible_user=azureuser
+20.193.130.9 ansible_user=azureuser ansible_password = anshul98

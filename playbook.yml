@@ -17,6 +17,7 @@
         state: latest
         update_cache: yes
       loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common','python3', 'python3-pip', 'virtualenv', 'python3-setuptools']
+
     - name: Add Docker GPG apt Key
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
@@ -51,7 +52,6 @@
         name: spe_major_project_frontend
         state: absent
 
-
     - name: Remove spring existing container
       docker_container:
         name: spe_major_project_backend
@@ -67,7 +67,6 @@
         name: anshulsankhyan98/spe_major_project_backend:latest
         state: absent
 
-
     - name: Docker pull React-app
       docker_image:
         name: anshulsankhyan98/spe_major_project_frontend:latest
@@ -75,13 +74,13 @@
 
     - name: Docker pull Spring-app
       docker_image:
-        name: anshulsankhyan98/spe_major_project_backend: pull
+        name: anshulsankhyan98/spe_major_project_backend
+        source: pull
 
     - name: Remove mysql existing container
       docker_container:
         name: outreach-db
         state: absent
-
 
     - name: Create MYSQL container
       docker_container:
@@ -109,13 +108,4 @@
         ports:
           - "8082:8082"
         volumes:
-          - /home/Student-Sphere/log-info:/logs
-
-    - name: Create outreach-react container
-      docker_container:
-        name: frontend-react
-        image: anshulsankhyan98/spe_major_project_frontend:latest
-        networks:
-          - name: "student-sphere"
-        ports:
-          - "3000:3000"
+          -

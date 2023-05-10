@@ -64,7 +64,7 @@
 
     - name: Remove spring existing image for fresh pull
       docker_image:
-        name: anshulsankhyan98/spe_major_project_backend:latest
+        name: anshulsankhyan98/spe_major_project_backend:latest:latest
         state: absent
 
     - name: Docker pull React-app
@@ -74,7 +74,7 @@
 
     - name: Docker pull Spring-app
       docker_image:
-        name: anshulsankhyan98/spe_major_project_backend
+        name: anshulsankhyan98/spe_major_project_backend:latest
         source: pull
 
     - name: Remove mysql existing container

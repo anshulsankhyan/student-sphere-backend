@@ -4,11 +4,6 @@
   remote_user: root
   become: true
   tasks:
-    - name: Install Docker
-      shell: apt-get update && apt-get install docker.io
-      
-    - name: Install Docker-compose
-      shell: apt-get docker-compose
       
     - name: copy docker-compose file
       copy:

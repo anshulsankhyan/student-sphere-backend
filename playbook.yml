@@ -38,26 +38,45 @@
       pip:
         name: docker
 
-    - name: Remove existing containers and images
+    - name: Remove react existing container
       docker_container:
-        name:
-          - spe_major_project_frontend
-          - spe_major_project_backend
-          - outreach-db
-        state: absent
-      docker_image:
-        name:
-          - anshulsankhyan98/spe_major_project_frontend:latest
-          - anshulsankhyan98/spe_major_project_backend:latest
+        name: spe_major_project_frontend
         state: absent
 
-    - name: Pull Docker images
+    - name: Remove spring existing container
+      docker_container:
+        name: spe_major_project_backend
+        state: absent
+
+    - name: Remove react existing image for fresh pull
       docker_image:
-        name:
-          - mysql:8.0.33
-          - anshulsankhyan98/spe_major_project_frontend:latest
-          - anshulsankhyan98/spe_major_project_backend:latest
+        name: anshulsankhyan98/spe_major_project_frontend:latest
+        state: absent
+
+    - name: Remove spring existing image for fresh pull
+      docker_image:
+        name: anshulsankhyan98/spe_major_project_backend:latest:latest
+        state: absent
+
+    - name: Docker pull React-app
+      docker_image:
+        name: anshulsankhyan98/spe_major_project_frontend:latest
         source: pull
+
+    - name: Docker pull Spring-app
+      docker_image:
+        name: anshulsankhyan98/spe_major_project_backend:latest
+        source: pull
+
+    - name: Remove mysql existing container
+      docker_container:
+        name: outreach-db
+        state: absent
+
+    - name: Create MYSQL container
+      docker_container:
+        name: outreach-db
+        image: mysql:8.0.23
 
     - name: Create Docker Network
       docker_network:

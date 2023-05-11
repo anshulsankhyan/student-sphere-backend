@@ -11,6 +11,8 @@ services:
   outreach-db:
     image: mysql:8.0.23
     restart: always
+    healthcheck:
+        test: ["CMD","ls"]
     networks:
       - student-sphere
     environment:
@@ -22,6 +24,9 @@ services:
   backend-spring:
     image: anshulsankhyan98/spe_major_project_backend:latest
     restart: always
+    depends_on:
+      outreach-db:
+        condition: service_healthy
     networks:
       - student-sphere
     environment:
@@ -33,6 +38,3 @@ services:
 
   frontend-react:
     image: anshulsankhyan98/spe_major_project_frontend:latest
-    restart: always
-    ports:
-      - "3000:3000"

@@ -5,10 +5,10 @@
   become: true
   tasks:
     - name: Install Docker
-      sh: apt-get install docker.io
+      shell: apt-get install docker.io
       
     - name: Install Docker-compose
-      sh: apt-get docker-compose
+      shell: apt-get docker-compose
       
     - name: copy docker-compose file
       copy:

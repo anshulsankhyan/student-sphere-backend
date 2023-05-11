@@ -1,2 +1,2 @@
-[localhost]
-anshulsankhyan98 ansible_connect=local
+[azureuser]
+20.193.130.9 ansible_user=azureuser

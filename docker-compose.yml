@@ -15,8 +15,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: anshul98
-    ports:
-      - "3307:3306"
     volumes:
       - db_volume:/var/lib/mysql
 

@@ -1,2 +1,2 @@
 [azureuser]
-localhost ansible_user=marvel
+20.193.130.9 ansible_user=azureuser

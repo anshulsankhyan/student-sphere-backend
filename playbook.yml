@@ -33,7 +33,10 @@
         update_cache: yes
         name: docker-ce
         state: latest
-
+    - name: copy docker-compose file
+      copy:
+        src: ./docker-compose.yml
+        dest: ./
     - name: Install Docker Module for Python
       pip:
         name: docker

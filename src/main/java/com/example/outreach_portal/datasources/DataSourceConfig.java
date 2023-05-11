@@ -15,12 +15,12 @@ public class DataSourceConfig {
         dataSourceBuilder.driverClassName("com.mysql.cj.jdbc.Driver");
         String url = System.getenv("DATABASE_HOST");
         if(url !=null){
-            dataSourceBuilder.url("jdbc:mysql://studentsphere-db:3306/student_sphere?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&autoReconnect=true&failOverReadOnly=false&maxReconnects=10");
+            dataSourceBuilder.url("jdbc:mysql://outreach-db:3306/student_sphere?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&autoReconnect=true&failOverReadOnly=false&maxReconnects=10");
         }else{
-            dataSourceBuilder.url("jdbc:mysql://localhost:3306/student_sphere?createDatabaseIfNotExist=true");
+            dataSourceBuilder.url("jdbc:mysql://localhost:3306/outreach?createDatabaseIfNotExist=true");
         }
         dataSourceBuilder.username("root");
-        dataSourceBuilder.password("Anshul98#");
+        dataSourceBuilder.password("anshul98");
         return dataSourceBuilder.build();
     }
 }

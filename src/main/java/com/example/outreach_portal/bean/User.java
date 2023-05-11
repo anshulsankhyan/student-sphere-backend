@@ -1,7 +1,6 @@
 package com.example.outreach_portal.bean;
 
 import javax.persistence.*;
-import java.util.Set;
 
 
 @Entity
@@ -215,7 +214,8 @@ public class User {
 	}
 
 
-	public boolean getRole() {
-		return role;
-	}
+
+
+	
+	
 }

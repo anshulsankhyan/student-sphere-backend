@@ -26,10 +26,10 @@ public String saveuser(User obj){
     user.setEmail(obj.getEmail());
     user.setInterest(obj.getInterest());
     user.setPassword(obj.getPassword());
-    user.setRole(obj.getRole());
+//    user.setRole(obj.getRole());
     user.setProgram(obj.getProgram());
     user.setProfile_pic(obj.getProfile_pic());
-    user.setStatus(obj.getStatus());
+//    user.setStatus(obj.getStatus());
     user.setRoll_no(obj.getRoll_no());
 
     saved.save(user);

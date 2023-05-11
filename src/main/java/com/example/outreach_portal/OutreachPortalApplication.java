@@ -43,9 +43,9 @@ public class OutreachPortalApplication {
 	InitializingBean sendDatabase() {
 	    return () -> {
 	    	
-	    	profileDao.save(new User(100, "anshul@gmail.com", "12345678",true,"https://firebasestorage.googleapis.com/v0/b/outreach-portal-8d2c2.appspot.com/o/sujit.png?alt=media&token=8f17c7a9-1601-40e7-bdd2-d1b8b438b47f", "anshul",
+	    	profileDao.save(new User(100, "ans", "12345678",true,"https://firebasestorage.googleapis.com/v0/b/outreach-portal-8d2c2.appspot.com/o/sujit.png?alt=media&token=8f17c7a9-1601-40e7-bdd2-d1b8b438b47f", "Sujit Kumar",
 					"Mtech","MT2020106", "2020", "", "",1));
-	    	profileDao.save(new User(101, "aaa", "12345678",true,"https://firebasestorage.googleapis.com/v0/b/outreach-portal-8d2c2.appspot.com/o/poojan.png?alt=media&token=3b923b54-6cca-4ca7-97ca-08bc8ef6a6c9", "ans Khatri",
+	    	profileDao.save(new User(101, "aaa", "12345678",true,"https://firebasestorage.googleapis.com/v0/b/outreach-portal-8d2c2.appspot.com/o/poojan.png?alt=media&token=3b923b54-6cca-4ca7-97ca-08bc8ef6a6c9", "Poojan Khatri",
 					"Mtech","MT2020041", "2020", "", "",1));
 	    	profileDao.save(new User(102, "chandrika.bhuyan@iiitb.org", "12345678",false,"https://firebasestorage.googleapis.com/v0/b/outreach-portal-8d2c2.appspot.com/o/chandrika.png?alt=media&token=ff92fe45-fc25-4035-a994-429cf31e7a23", "Chandrika Bhuyan",
 					"Mtech","MT2020056", "2020", "", "",1));

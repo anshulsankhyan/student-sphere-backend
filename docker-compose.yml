@@ -20,7 +20,7 @@ services:
       - student-sphere
 
   backend:
-    image: anshulsankhyan98/spStatStopDBe_major_project_backend:latest
+    image: anshulsankhyan98/spe_major_project_backend:latest
     environment:
       DATABASE_HOST: database
       DB_USERNAME: root
@@ -28,9 +28,9 @@ services:
     volumes:
       - logs:/logs
     networks:
-      - stat-stop
+      - student-sphere
     ports:
-      - "8082:8082"
+      - "8082:8081"
     depends_on:
       database:
         condition: service_healthy

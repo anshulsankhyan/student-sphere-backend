@@ -13,7 +13,17 @@
       pip:
         name: docker
     - name: remove containers using docker-compose
-      command: docker-compose down       
+      command: docker-compose down 
+      
+    - name: Remove react existing image for fresh pull
+      docker_image:
+        name: anshulsankhyan98/spe_major_project_frontend:latest
+        state: absent
+
+    - name: Remove spring existing image for fresh pull
+      docker_image:
+        name: anshulsankhyan98/spe_major_project_backend:latest
+        state: absent  
 
     - name: Create containers using docker-compose
       command: docker-compose up -d

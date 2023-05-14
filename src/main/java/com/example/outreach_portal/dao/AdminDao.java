@@ -7,7 +7,8 @@ import org.springframework.stereotype.Component;
 @Component
 public interface AdminDao extends JpaRepository<admin, String> {
 
-    admin findByUsernameAndPassword(String id, String password);
 
 
+
+    admin findByUsernameAndPassword(int username, String password);
 }

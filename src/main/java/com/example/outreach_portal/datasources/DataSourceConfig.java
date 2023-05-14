@@ -17,10 +17,10 @@ public class DataSourceConfig {
         if(url !=null){
             dataSourceBuilder.url("jdbc:mysql://"+url+":3306/student_sphere?createDatabaseIfNotExist=true");
         }else{
-            dataSourceBuilder.url("jdbc:mysql://localhost:3306/outreach?createDatabaseIfNotExist=true");
+            dataSourceBuilder.url("jdbc:mysql://localhost:3306/student_sphere?createDatabaseIfNotExist=true");
         }
         dataSourceBuilder.username("root");
-        dataSourceBuilder.password("anshul98");
+        dataSourceBuilder.password("Anshul98#");
         return dataSourceBuilder.build();
     }
 }

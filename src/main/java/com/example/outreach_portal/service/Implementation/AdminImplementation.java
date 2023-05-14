@@ -18,7 +18,7 @@ public class AdminImplementation implements AdminService {
 
         admin data = new admin();
 
-        data = dao.findByUsernameAndPassword(object.getUserName(), object.getPassword());
+        data = dao.findByUsernameAndPassword(object.getUsername(), object.getPassword());
 
         if(data != null){
             return "sucess";

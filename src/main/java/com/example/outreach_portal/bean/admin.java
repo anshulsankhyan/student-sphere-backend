@@ -11,21 +11,12 @@ import static javax.persistence.GenerationType.*;
 @Entity
 @Table(name = "admin")
 public class admin {
-
-    public int getId() {
-        return id;
+    public admin(int username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getUserName() {
-        return username;
-    }
-
-    public void setUserName(String userName) {
-        this.username = userName;
+    public admin() {
     }
 
     public String getPassword() {
@@ -37,12 +28,16 @@ public class admin {
     }
 
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
-
-    String username;
+     @Id
+     int username;
 
     String password;
 
+    public int getUsername() {
+        return username;
+    }
+
+    public void setUsername(int username) {
+        this.username = username;
+    }
 }

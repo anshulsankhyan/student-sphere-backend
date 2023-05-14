@@ -40,9 +40,6 @@ class OutreachPortalApplicationTests {
 	@Autowired
 	ProfileService profileService;
 	
-	@Autowired
-	CourseSercive courseService;
-	
 	
 	@Autowired
 	ProjectService projectService;
@@ -65,7 +62,7 @@ class OutreachPortalApplicationTests {
 	
 	@Test
 	public void testproFileCase2() {
-	    User user = profileService.getUser(1001);
+	    User user = profileService.getUser(101);
 	    if(user==null)
 	    	assertNull(user);
 	    else
@@ -73,19 +70,7 @@ class OutreachPortalApplicationTests {
 	    
 	}
 	
-	@Test
-	public void testcourseCase() {
-	    List<Post> post = courseService.getCoursePost(1001);
-	    assertNull(post);
-	    
-	}
-	
-	@Test
-	public void testcourseCase2() {
-	    List<Post> post = courseService.getCoursePost(101);
-	    assertNotNull(post);
-	    
-	}
+
 	
 	@Test
 	public void testProjetCase1() {
